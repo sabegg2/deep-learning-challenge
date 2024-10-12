@@ -1,4 +1,4 @@
-# deep-learning-challenge
+# deep-learning-challenge INSTRUCTIONS
 - Module 21 Challenge
 - Steph Abegg
 
@@ -25,8 +25,8 @@ From Alphabet Soup’s business team, you have received a CSV containing more th
 Using your knowledge of Pandas and scikit-learn’s StandardScaler(), you’ll need to preprocess the dataset. This step prepares you for Step 2, where you'll compile, train, and evaluate the neural network model.
 
 - Read in the charity_data.csv to a Pandas DataFrame, and be sure to identify the following in your dataset:
-- What variable(s) are the target(s) for your model?
-- What variable(s) are the feature(s) for your model?
+    - What variable(s) are the target(s) for your model?
+    - What variable(s) are the feature(s) for your model?
 - Drop the EIN and NAME columns.
 - Determine the number of unique values for each column.
 - For columns that have more than 10 unique values, determine the number of data points for each unique value.
@@ -57,9 +57,9 @@ Using your knowledge of TensorFlow, optimize your model to achieve a target pred
 Use any or all of the following methods to optimize your model:
 
 - Adjust the input data to ensure that no variables or outliers are causing confusion in the model, such as:
-- Dropping more or fewer columns.
-- Creating more bins for rare occurrences in columns.
-- Increasing or decreasing the number of values for each bin.
+    - Dropping more or fewer columns.
+    - Creating more bins for rare occurrences in columns.
+    - Increasing or decreasing the number of values for each bin.
 - Add more neurons to a hidden layer.
 - Add more hidden layers.
 - Use different activation functions for the hidden layers.
@@ -98,5 +98,14 @@ The report should contain the following:
 
 - Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
 
+# Directory
 
-My Analysis Report can be found [here](Analysis/Analysis.md).
+Starter_code notebook preprocesses the data from charity_data.csv and creates five neural network models which aim to classify applicants as successful or unsuccessful.
+
+AlphabetSoupCharity_Optimisation notebook preprocesses the data slightly further and tests the same five model with this data.
+
+[Analysis.md](Analysis/Analysis.md) summarises the Project steps and outcomes.
+
+AlphabetSoupCharity.h5 is the first model created. All other models have their weights saved only in the corresponding folders (model01, model01pp, etc.).
+
+Resources folder contains the original data source charity_data.csv and a preprocessed version pp_charity_data.csv .
