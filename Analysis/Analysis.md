@@ -88,7 +88,7 @@ The first optimization run using the keras_tuner library had the following param
 - 20 epochs
 - 60 trials
 
-The model prediction gave an Accuracy: 0.7298
+The model prediction gave an Accuracy: 0.7334, Loss: 0.5507
 
 #### Optimized Model V2
 
@@ -103,7 +103,7 @@ The second optimization run using the keras_tuner library had the following para
 - Added L2 regularization to the dense layers to help prevent overfitting.
 - 60 trials
 
-The model prediction gave an Accuracy: 0.7262
+The model prediction gave an Accuracy: 0.7329, Loss: 0.5801
 
 #### Optimized Model V3
 
@@ -117,7 +117,7 @@ The third optimization run using the keras_tuner library had the following param
 - Implemented Early Stopping as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
 - 177 trials
 
-The model prediction gave an Accuracy: 0.7269
+The model prediction gave an Accuracy: 0.7326, Loss: 0.5502
 
 #### Optimized Model V4
 
@@ -132,7 +132,7 @@ The fourth optimization run using the keras_tuner library had the following para
 - Decreased the number of values in the Other bin for APPLICATION_TYPE (speficically, set it to v<156 rather than v<528).
 - 60 trials
   
-The model prediction gave an Accuracy: 0.7289
+The model prediction gave an Accuracy: 0.7967, Loss: 0.4702
 
 ## Summary
 
@@ -142,6 +142,4 @@ I made various attempts to better the accuracy of the initial optimised model: a
 
 Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the Name column back into the model. A possible explaination is that this reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
 
-## Summary:
-
-The final automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 0.45 loss, using a sigmoid activation function with input node of 76; 5 hidden layers at a 16, 21, 26, 11, 21, neurons split and 50 training epochs. Performing better than the non automized model. Keeping the Name column was crucial in achieving and and going beyond the target. This shows the importance of the shape of your datasets before you preprocess it. The explanation being that it reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
+The final automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 47% loss. This model used a tanh activation function with input node of 56 neurons and 5 hidden layers at a 16, 11, 16, 16, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. Keeping the Name column was crucial in achieving and and going beyond the target. This shows the importance of the shape of your datasets before you preprocess it. 
