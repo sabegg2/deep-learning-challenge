@@ -89,13 +89,13 @@ The first optimization run using the keras_tuner library had the following optio
     - tanh
 - Up to 80 nodes in the input layer, and up to 40 nodes in the hidden layers
 - 20 epochs
-- 
+  
 The best model when ran with 60 trials produced:
 - Accuracy: 0.7334
 - Loss: 0.5507
 
 Model Summary:
-<img src="images\hyperparameters_model1.png" width=200>
+<img src="Images\hyperparameters_model1.png" width=200>
 
 #### Optimized Model V2
 
@@ -117,7 +117,7 @@ The best model when ran with 60 trials produced:
 - Loss: 0.5801
 
 Model Summary:
-<img src="images\hyperparameters_model2.png" width=200>
+<img src="Images\hyperparameters_model2.png" width=200>
 
 #### Optimized Model V3
 
@@ -138,7 +138,7 @@ The best model when ran with 177 trials produced:
 - Loss: 0.5502
 
 Model Summary:
-<img src="images\hyperparameters_model3.png" width=200>
+<img src="Images\hyperparameters_model3.png" width=200>
 
 #### Optimized Model V4
 
@@ -160,7 +160,7 @@ The best model when ran with 60 trials produced:
 - Loss: 0.4702
 
 Model Summary:
-<img src="images\hyperparameters_model4.png" width=200>
+<img src="Images\hyperparameters_model4.png" width=200>
 
 ## Summary
 
