@@ -67,7 +67,7 @@ The model prediction gave an Accuracy: 0.7284.
 Model Summary and loss and accuraccy plots from model training:
 
 <img src="..\Images\parameters_initialmodel.png" width=200>
-<img src="..\Images\plot_loss.png" width=400> <img src="..\Images\plot_accuracy.png" width=400>
+<img src="..\Images\plot_loss.png" width=300> <img src="..\Images\plot_accuracy.png" width=300>
 
 
 ### 3: Optimize the Model
