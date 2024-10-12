@@ -64,6 +64,12 @@ The model prediction gave an Accuracy: 0.7284.
   
 (Note that I also tried other techniques for the base model, such as: I increased the hidden layers to 3 and set the third hidden layer at 30. I also tried using the tanh activation and 3 hidden layers with 90, 30, 30 neurons split and a sigmoid activation for output. I also experimented with increasing nodes and neurons. But despite doing this all models came below the 75% threshold.)
 
+Model Summary and loss and accuraccy plots from model training:
+
+<img src="..\Images\parameters_initialmodel.png" width=200>
+<img src="..\Images\plot_loss.png" width=400> <img src="..\Images\plot_accuracy.png" width=400>
+
+
 ### 3: Optimize the Model
 
 The goal was to get the accuracy of the model to at least 75%.
