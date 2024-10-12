@@ -95,7 +95,7 @@ The best model when ran with 60 trials produced:
 - Loss: 0.5507
 
 Model Summary:
-<img src="Images\hyperparameters_model1.png" width=200>
+<img src="..\Images\hyperparameters_model1.png" width=200>
 
 #### Optimized Model V2
 
