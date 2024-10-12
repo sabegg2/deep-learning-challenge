@@ -25,8 +25,22 @@ From Alphabet Soup’s business team, you have received a CSV containing more th
 Using your knowledge of Pandas and scikit-learn’s StandardScaler(), you’ll need to preprocess the dataset. This step prepares you for Step 2, where you'll compile, train, and evaluate the neural network model.
 
 - Read in the charity_data.csv to a Pandas DataFrame, and be sure to identify the following in your dataset:
-- What variable(s) are the target(s) for your model?
-- What variable(s) are the feature(s) for your model?
+    - What variable(s) are the target(s) for your model?
+
+I    `IS_SUCCESSFUL`
+
+    - What variable(s) are the feature(s) for your model?
+
+    `APPLICATION_TYPE`
+    `AFFILIATION`
+    `CLASSIFICATION`
+    `USE_CASE`
+    `ORGANIZATION`
+    `STATUS`
+    `INCOME_AMT`
+    `SPECIAL_CONSIDERATIONS`
+    `ASK_AMT`
+
 - Drop the EIN and NAME columns.
 - Determine the number of unique values for each column.
 - For columns that have more than 10 unique values, determine the number of data points for each unique value.
