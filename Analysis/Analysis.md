@@ -76,3 +76,22 @@ I kept the Name column for my final Optimized Model as I still hadn't reached th
 ## Summary:
 
 The final automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 0.45 loss, using a sigmoid activation function with input node of 76; 5 hidden layers at a 16, 21, 26, 11, 21, neurons split and 50 training epochs. Performing better than the non automized model. Keeping the Name column was crucial in achieving and and going beyond the target. This shows the importance of the shape of your datasets before you preprocess it.
+
+Overall we were able to consistently train and test a neural network which can accurrately predict the success outcome of a funding venture 72.5% of the time. It would fall upon the risk tolerance of the Alphabet Soup company to decide if this 72.5% accuracy is close enough to the target 75% for them to move forward with implementing the model in their decision making process.
+
+In reseraching I learned others were able to reach an accuracy of over 80% by including the 'NAME' feature back into the algorithm and normalizing it. The explanation being that it reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
+
+In the future I would change the model to try a different input activation and increase the number of nodes and hidden layers. Often the shape of the input data can be an important factor in the accuracy and success of a model. While increasing the number of hidden layers and neurons in each layer can improve the overall accuracy as well.
+
+
+Summary of Results
+
+Overall the deep learning model did give near 73% accuracy on a dataset with many dimensions and with some complexity.
+Whilst this didn't quite meet the desired performance goal of 75%, the optimization resulted in a decrease for the number of neuron's required with only one additional layer required, compared to my initial model
+
+Alternative Model
+
+An alternative model to the one used within my analysis is the Random Forest algorithm
+This model is widely used within the finance industry
+The model can be easily scaled to large datasets, is typically good at not overfitting to data, and is resillient to noisy data
+The random forest model works by creating random predictions from decision trees and creates an average of these results to build a model
