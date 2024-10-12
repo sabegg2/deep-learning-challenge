@@ -1,10 +1,6 @@
-# deep-learning-challenge ANALYSIS
+# Report on the Neural Network Model
 - Module 21 Challenge
 - Steph Abegg
-
-# Report on the Neural Network Model
-
-Deep Learning Charity Funding Outcome Predictor Project using hyper-tuned Neural Networks.
 
 ## Overview:
 
@@ -28,11 +24,15 @@ I've created a tool for the nonprofit foundation Alphabet Soup that can help it 
 
 - Dataset was checked for null and duplicated values
 
-- EIN and NAME—Identification columns removed from the input data because they are neither targets nor features 
+- `EIN` and `NAME` columns removed from the input data because they are neither targets nor features ('EIN' is a unique reference number given to each organization requesting/receiving funding, and `NAME` is the name of the organization making a request/receiving funding from the foundation)
 
-- Created cutoff point to bin "rare" categorical variables together in a new value, Other for both CLASSIFICATION and APPLICATION_TYPE 
+- Created cutoff point to bin "rare" categorical variables together in a new value, `Other`, for both `CLASSIFICATION` and `APPLICATION_TYPE`. ('CLASSIFICATION' - Due to the numebr of unique values within this column, the values have been 'binned' into an Other category if the value is < 1883. 'APPLICATION_TYPE' - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 528.)
 
-- Converted categorical data to numeric with pd.get_dummies, split the preprocessed data into features and target arrays, then lastly split into training and tesing datasets 
+- Converted categorical data to numeric with pd.get_dummies.
+
+- Split the preprocessed data into features and target arrays.
+  
+- Split into training and tesing datasets.
 
 - Target Variable for the model:
 
@@ -64,57 +64,67 @@ The model prediction gave an Accuracy: 0.7294.
 
 ### 3: Optimize the Model
 
-I decided to use an automated model optimizer to get the most accurate model possible by creating method that creates a keras Sequential model using the keras-tuner library with hyperparametes options. I created four optimized models in an attempt to get the accuracy to at least 75%.
+The goal was to get the accuracy of the model to at least 75%.
+
+My attempt to optimize the model made use of the keras_tuner library This provides the ability to test a number of different options for the model, including:
+
+- The number of different hidden layers within the model
+
+- How many neurons per layer
+
+- Varying activation functions
+
+- Ultimatley outputting the parameters which worked best for model accuracy
 
 #### Optimized Model V1
 
-Here are the changes I made from the base model:
+The first optimization run using the keras_tuner library had the following parameters:
 
 - Five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh.
-- max_epochs=20
+- 20 epochs
 - 60 trials
 
 The model prediction gave an Accuracy: 0.7298
 
 #### Optimized Model V2
 
-Here are the changes I made from the base model:
+The second optimization run using the keras_tuner library had the following parameters:
 
 - Five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh.
-- max_epochs=20
-- Added a learning rate choice: Allow Keras Tuner to explore different learning rates. The learning rate is a critical hyperparameter that can significantly impact the training of the model.
-- Dropout Layers: Include dropout layers to reduce overfitting by randomly setting a fraction of input units to 0 at each update during training.
-- Regularization: Add L2 regularization to the dense layers to help prevent overfitting.
+- 20 epochs
+- Added a learning rate choice, which alows Keras Tuner to explore different learning rates. The learning rate is a critical hyperparameter that can significantly impact the training of the model.
+- Include dropout layers to reduce overfitting by randomly setting a fraction of input units to 0 at each update during training.
+- Added L2 regularization to the dense layers to help prevent overfitting.
 - 60 trials
 
 The model prediction gave an Accuracy: 0.7262
 
 #### Optimized Model V3
 
-Here are the changes I made from the base model:
+The third optimization run using the keras_tuner library had the following parameters:
 
 - Eight hidden layers with a number of neurons between 1 and 100 (first layer) and 1 and 50 (other layers) and activation function choice of either relu or tanh.
-- max_epochs=60. The number of epochs refers to how many times the learning algorithm will work through the entire training dataset. It is a crucial hyperparameter that can significantly affect the performance and behavior of a machine learning model. Here’s how the number of epochs impacts the model. Low Number of Epochs: Can lead to underfitting and high bias. High Number of Epochs: Can result in overfitting and high variance. Choosing the right number of epochs is a balancing act, and it's often beneficial to experiment with different values to find the one that yields the best model performance on your specific dataset.
-- Batch Size=50 (the default--used in previous Optimized Models--is 32). This means that the training data is be divided into batches of 50 samples each during training. The choice of batch size can significantly affect the performance and convergence of your model. Smaller batch sizes might lead to more noisy updates, while larger batch sizes might provide a more stable estimate of the gradient, but they may require more memory.
-- Early Stopping: Implemented as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
+- 60 epochs. The number of epochs refers to how many times the learning algorithm will work through the entire training dataset. It is a crucial hyperparameter that can significantly affect the performance and behavior of a machine learning model. A low number of epochs can lead to underfitting and high bias. A high number of epochs can result in overfitting and high variance. Choosing the right number of epochs is a balancing act, and it's often beneficial to experiment with different values to find the one that yields the best model performance on your specific dataset.
+- Batch size of 50 (the default--used in previous optimized models--is 32). This means that the training data is be divided into batches of 50 samples each during training. The choice of batch size can significantly affect the performance and convergence of your model. Smaller batch sizes might lead to more noisy updates, while larger batch sizes might provide a more stable estimate of the gradient, but they may require more memory.
+- Implemented Early Stopping as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
 - 177 trials
 
 The model prediction gave an Accuracy: 0.7269
 
 #### Optimized Model V4
 
-Here are the changes I made from the base model:
+The fourth optimization run using the keras_tuner library had the following parameters:
 
 - Five hidden layers with a number of neurons between 1 and 80 and activation function choice of either relu or tanh.
-- max_epochs=20
+- 20 epochs
 - Removed 'ASK_AMT' (which was predominatly $5000 and a then just one or two occurences of all other values) column, and added back in the 'NAME' column.
-- Creating more bins for rare occurrences in columns (specifically, created two Other bins Other1 and Other2 for the CLASSIFICATION column).
+- Created more bins for rare occurrences in columns (specifically, created two Other bins Other1 and Other2 for the CLASSIFICATION column).
 - Decreased the number of values in the Other bin for APPLICATION_TYPE (speficically, set it to v<156 rather than v<528).
 - 60 trials
   
 The model prediction gave an Accuracy: 0.7289
 
-## Final Optimization
+## Summary
 
 The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs.
 
