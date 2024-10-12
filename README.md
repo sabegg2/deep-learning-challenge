@@ -2,7 +2,9 @@
 - Module 21 Challenge
 - Steph Abegg
 
-# deep-learning-challenge ANALYSIS
+# Report on the Neural Network Model
+
+This README contains the instructions for the challenge. My analysis is located here:
 
 [Analysis.md](Analysis/Analysis.md)
 
