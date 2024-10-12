@@ -52,21 +52,28 @@ I've created a tool for the nonprofit foundation Alphabet Soup that can help it 
  
 #### 2: Compiling, Training, and Evaluating the Model
 
-I build the first model with the following parameters with low computation time in mind:
+I build the base model with the following parameters with low computation time in mind:
 
-- 2 hidden layers with 80, 30 neurons split (the input (node) feature was 43, 80 was chosen as the first layer as it is almost double the input_feature). With an hidden layer activation function of relu as this our go to for first model.
+- Two hidden layers with 80, 30 neurons split. The hidden layer activation function was set to relu.
 
-- Output node is 1 as it was binary classifier model with only one output: was the funding application succesfull yes or no. And an output layer activation of sigmoid as the model output is binary classification between 0 and 1.
-- 
-I then increased the hidden layers to 3 and set the third hidden layer at 30 as the model prediction accuracy was below 75%: 
+- Output node is 1 neuron as it was binary classifier model with only one output: was the funding application succesful, yes or no? The output layer activation function was set to sigmoid as the model output is binary classification between 0 and 1.
 
-For the second model I decided to use tanh activation and 3 hidden layers with 90, 30, 20 neurons split and a sigmoid activation for output as the output doesn't change.
-
-I experimented with increasing nodes and neurons, with changing other parameters to get a better accuracy but despite doing this both models came below the 75% threshold.
+The model prediction gave an Accuracy: 0.72944.
+  
+(Note that I also tried other techniques for the base model, such as: I increased the hidden layers to 3 and set the third hidden layer at 30. I also tried using the tanh activation and 3 hidden layers with 90, 30, 30 neurons split and a sigmoid activation for output. I also experimented with increasing nodes and neurons. But despite doing this all models came below the 75% threshold.)
 
 ### 3: Optimize the Model
 
-I decided to use an automated model optimizer to get the most accurate model possible by creating method that creates a keras Sequential model using the keras-tuner library with hyperparametes options.
+I decided to use an automated model optimizer to get the most accurate model possible by creating method that creates a keras Sequential model using the keras-tuner library with hyperparametes options. I created four optimized models in an attempt to get the accuracy to at least 75%.
+
+#### Optimized Model V1
+
+Here are the changes I made from the base model:
+
+- Five hidden layers with a number of neurons between 1 and 80 and activation function of either relu or tanh.
+- 
+
+
 
 
 ## Further and Final Optimization
