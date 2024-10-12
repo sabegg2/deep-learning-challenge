@@ -1,4 +1,4 @@
-# deep-learning-challenge
+# deep-learning-challenge INSTRUCTIONS
 - Module 21 Challenge
 - Steph Abegg
 
