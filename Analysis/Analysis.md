@@ -50,7 +50,7 @@ I've created a tool for the nonprofit foundation Alphabet Soup that can help it 
     - `SPECIAL_CONSIDERATIONS`
     - `ASK_AMT`
  
-#### 2: Compiling, Training, and Evaluating the Model
+### 2: Compiling, Training, and Evaluating the Model
 
 I build the base model with the following parameters with low computation time in mind:
 
