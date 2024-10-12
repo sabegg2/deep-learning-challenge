@@ -82,57 +82,85 @@ My attempt to optimize the model made use of the keras_tuner library This provid
 
 [AlphabetSoupCharity_Optimized_V1.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V1.keras)
 
-The first optimization run using the keras_tuner library had the following parameters:
-
-- Five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh.
+The first optimization run using the keras_tuner library had the following options:
+- 1-5 Hidden Layers
+- Activation functions either:
+    - relu
+    - tanh
+- Up to 80 nodes in the input layer, and up to 40 nodes in the hidden layers
 - 20 epochs
-- 60 trials
+- 
+The best model when ran with 60 trials produced:
+- Accuracy: 0.7334
+- Loss: 0.5507
 
-The model prediction gave an Accuracy: 0.7334, Loss: 0.5507
+Model Summary:
+<img src="images\hyperparameters_model1.png" width=200>
 
 #### Optimized Model V2
 
 [AlphabetSoupCharity_Optimized_V2.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
 
-The second optimization run using the keras_tuner library had the following parameters:
-
-- Five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh.
+The first optimization run using the keras_tuner library had the following options:
+- 1-5 Hidden Layers
+- Activation functions either:
+    - relu
+    - tanh
+- Up to 80 nodes in the input layer, and up to 40 nodes in the hidden layers
 - 20 epochs
 - Added a learning rate choice, which alows Keras Tuner to explore different learning rates. The learning rate is a critical hyperparameter that can significantly impact the training of the model.
 - Include dropout layers to reduce overfitting by randomly setting a fraction of input units to 0 at each update during training.
 - Added L2 regularization to the dense layers to help prevent overfitting.
-- 60 trials
+  
+The best model when ran with 60 trials produced:
+- Accuracy: 0.7329
+- Loss: 0.5801
 
-The model prediction gave an Accuracy: 0.7329, Loss: 0.5801
+Model Summary:
+<img src="images\hyperparameters_model2.png" width=200>
 
 #### Optimized Model V3
 
 [AlphabetSoupCharity_Optimized_V3.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V3.keras)
 
-The third optimization run using the keras_tuner library had the following parameters:
-
-- Eight hidden layers with a number of neurons between 1 and 100 (first layer) and 1 and 50 (other layers) and activation function choice of either relu or tanh.
+The third optimization run using the keras_tuner library had the following options:
+- 1-8 Hidden Layers
+- Activation functions either:
+    - relu
+    - tanh
+- Up to 100 nodes in the input layer, and up to 50 nodes in the hidden layers
 - 60 epochs. The number of epochs refers to how many times the learning algorithm will work through the entire training dataset. It is a crucial hyperparameter that can significantly affect the performance and behavior of a machine learning model. A low number of epochs can lead to underfitting and high bias. A high number of epochs can result in overfitting and high variance. Choosing the right number of epochs is a balancing act, and it's often beneficial to experiment with different values to find the one that yields the best model performance on your specific dataset.
 - Batch size of 50 (the default--used in previous optimized models--is 32). This means that the training data is be divided into batches of 50 samples each during training. The choice of batch size can significantly affect the performance and convergence of your model. Smaller batch sizes might lead to more noisy updates, while larger batch sizes might provide a more stable estimate of the gradient, but they may require more memory.
 - Implemented Early Stopping as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
-- 177 trials
+  
+The best model when ran with 177 trials produced:
+- Accuracy: 0.7326
+- Loss: 0.5502
 
-The model prediction gave an Accuracy: 0.7326, Loss: 0.5502
+Model Summary:
+<img src="images\hyperparameters_model3.png" width=200>
 
 #### Optimized Model V4
 
 [AlphabetSoupCharity_Optimized_V4.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
 
-The fourth optimization run using the keras_tuner library had the following parameters:
-
-- Five hidden layers with a number of neurons between 1 and 80 and activation function choice of either relu or tanh.
+The third optimization run using the keras_tuner library had the following options:
+- 1-5 Hidden Layers
+- Activation functions either:
+    - relu
+    - tanh
+- Up to 100 nodes in the input layer, and up to 50 nodes in the hidden layers
 - 20 epochs
 - Removed 'ASK_AMT' (which was predominatly $5000 and a then just one or two occurences of all other values) column, and added back in the 'NAME' column.
 - Created more bins for rare occurrences in columns (specifically, created two Other bins Other1 and Other2 for the CLASSIFICATION column).
 - Decreased the number of values in the Other bin for APPLICATION_TYPE (speficically, set it to v<156 rather than v<528).
-- 60 trials
   
-The model prediction gave an Accuracy: 0.7967, Loss: 0.4702
+The best model when ran with 60 trials produced:
+- Accuracy: 0.7967
+- Loss: 0.4702
+
+Model Summary:
+<img src="images\hyperparameters_model4.png" width=200>
 
 ## Summary
 
