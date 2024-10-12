@@ -99,7 +99,7 @@ Here are the changes I made from the base model:
 - Early Stopping: Implemented as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
 - 177 trials
 
-The model prediction gave an Accuracy: 0.7284
+The model prediction gave an Accuracy: 0.7269
 
 #### Optimized Model V4
 
