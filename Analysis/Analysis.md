@@ -70,11 +70,34 @@ I decided to use an automated model optimizer to get the most accurate model pos
 
 Here are the changes I made from the base model:
 
-- Five hidden layers with a number of neurons between 1 and 80 and activation function of either relu or tanh.
-- 
+- Five hidden layers with a number of neurons between 1 and 80 and activation function choice of either relu or tanh.
+- max_epochs=20
+- 60 trials
 
+The model prediction gave an Accuracy: 
 
+#### Optimized Model V2
 
+Here are the changes I made from the base model:
+
+- Five hidden layers with a number of neurons between 1 and 80 and activation function choice of either relu or tanh.
+- max_epochs=20
+- 60 trials
+- Added a learning rate choice: Allow Keras Tuner to explore different learning rates. The learning rate is a critical hyperparameter that can significantly impact the training of the model.
+- Dropout Layers: Include dropout layers to reduce overfitting by randomly setting a fraction of input units to 0 at each update during training.
+- Regularization: Add L2 regularization to the dense layers to help prevent overfitting.
+
+The model prediction gave an Accuracy: 
+
+#### Optimized Model V3
+
+Here are the changes I made from the base model:
+
+- Eight hidden layers with a number of neurons between 1 and 100 and activation function choice of either relu or tanh.
+- max_epochs=60. The number of epochs refers to how many times the learning algorithm will work through the entire training dataset. It is a crucial hyperparameter that can significantly affect the performance and behavior of a machine learning model. Here’s how the number of epochs impacts the model. Low Number of Epochs: Can lead to underfitting and high bias. High Number of Epochs: Can result in overfitting and high variance. Choosing the right number of epochs is a balancing act, and it's often beneficial to experiment with different values to find the one that yields the best model performance on your specific dataset.
+- 60 trials
+
+The model prediction gave an Accuracy: 
 
 ## Further and Final Optimization
 
