@@ -80,7 +80,7 @@ The model prediction gave an Accuracy: 0.7298
 
 Here are the changes I made from the base model:
 
-- Five hidden layers with a number of neurons between 1 and 80 and activation function choice of either relu or tanh.
+- Five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh.
 - max_epochs=20
 - Added a learning rate choice: Allow Keras Tuner to explore different learning rates. The learning rate is a critical hyperparameter that can significantly impact the training of the model.
 - Dropout Layers: Include dropout layers to reduce overfitting by randomly setting a fraction of input units to 0 at each update during training.
@@ -93,7 +93,7 @@ The model prediction gave an Accuracy: 0.7262
 
 Here are the changes I made from the base model:
 
-- Eight hidden layers with a number of neurons between 1 and 100 and activation function choice of either relu or tanh.
+- Eight hidden layers with a number of neurons between 1 and 100 (first layer) and 1 and 50 (other layers) and activation function choice of either relu or tanh.
 - max_epochs=60. The number of epochs refers to how many times the learning algorithm will work through the entire training dataset. It is a crucial hyperparameter that can significantly affect the performance and behavior of a machine learning model. Here’s how the number of epochs impacts the model. Low Number of Epochs: Can lead to underfitting and high bias. High Number of Epochs: Can result in overfitting and high variance. Choosing the right number of epochs is a balancing act, and it's often beneficial to experiment with different values to find the one that yields the best model performance on your specific dataset.
 - Batch Size=50 (the default--used in previous Optimized Models--is 32). This means that the training data is be divided into batches of 50 samples each during training. The choice of batch size can significantly affect the performance and convergence of your model. Smaller batch sizes might lead to more noisy updates, while larger batch sizes might provide a more stable estimate of the gradient, but they may require more memory.
 - Early Stopping: Implemented as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
@@ -107,12 +107,12 @@ Here are the changes I made from the base model:
 
 - Five hidden layers with a number of neurons between 1 and 80 and activation function choice of either relu or tanh.
 - max_epochs=20
-- Removed 'INCOME_AMT' and 'SPECIAL_CONSIDERATIONS' columns
+- Removed 'SPECIAL_CONSIDERATIONS' (which was just 'Y'/'N') and 'ASK_AMT' (which was predominatly $5000) columns
 - Creating more bins for rare occurrences in columns (specifically, created two Other bins Other1 and Other2 for the CLASSIFICATION column).
 - Decreased the number of values in the Other bin for APPLICATION_TYPE (speficically, set it to v<156 rather than v<528).
 - 60 trials
   
-The model prediction gave an Accuracy: 
+The model prediction gave an Accuracy: 0.7290
 
 ## Further and Final Optimization
 
