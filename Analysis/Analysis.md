@@ -60,7 +60,7 @@ I build the base model with the following parameters with low computation time i
 
 - Output node is 1 neuron as it was binary classifier model with only one output: was the funding application succesful, yes or no? The output layer activation function was set to sigmoid as the model output is binary classification between 0 and 1.
 
-The model prediction gave an Accuracy: 0.7294.
+The model prediction gave an Accuracy: 0.7284.
   
 (Note that I also tried other techniques for the base model, such as: I increased the hidden layers to 3 and set the third hidden layer at 30. I also tried using the tanh activation and 3 hidden layers with 90, 30, 30 neurons split and a sigmoid activation for output. I also experimented with increasing nodes and neurons. But despite doing this all models came below the 75% threshold.)
 
