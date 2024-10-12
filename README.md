@@ -104,7 +104,7 @@ Starter_code notebook preprocesses the data from charity_data.csv and creates fi
 
 AlphabetSoupCharity_Optimisation notebook preprocesses the data slightly further and tests the same five model with this data.
 
-[here](Analysis/Analysis.md) summarises the Project steps and outcomes.
+[Analysis.md](Analysis/Analysis.md) summarises the Project steps and outcomes.
 
 AlphabetSoupCharity.h5 is the first model created. All other models have their weights saved only in the corresponding folders (model01, model01pp, etc.).
 
