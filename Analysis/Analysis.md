@@ -136,8 +136,8 @@ The third optimization run using the keras_tuner library had the following optio
 - Implemented Early Stopping as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
   
 The best model when ran with 177 trials produced:
-- Accuracy: 0.7326
-- Loss: 0.5502
+- Accuracy: 0.7343 
+- Loss: 0.5538
 
 Model Summary:
 
