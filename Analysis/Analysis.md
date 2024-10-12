@@ -52,6 +52,8 @@ I've created a tool for the nonprofit foundation Alphabet Soup that can help it 
  
 ### 2: Compiling, Training, and Evaluating the Model
 
+[AlphabetSoupCharity.keras](Models_keras_files/AlphabetSoupCharity.keras)
+
 I build the base model with the following parameters with low computation time in mind:
 
 - Two hidden layers with 80, 30 neurons split. The hidden layer activation function was set to relu.
@@ -78,6 +80,8 @@ My attempt to optimize the model made use of the keras_tuner library This provid
 
 #### Optimized Model V1
 
+[AlphabetSoupCharity_Optimized_V1.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V1.keras)
+
 The first optimization run using the keras_tuner library had the following parameters:
 
 - Five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh.
@@ -87,6 +91,8 @@ The first optimization run using the keras_tuner library had the following param
 The model prediction gave an Accuracy: 0.7298
 
 #### Optimized Model V2
+
+[AlphabetSoupCharity_Optimized_V2.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
 
 The second optimization run using the keras_tuner library had the following parameters:
 
@@ -101,6 +107,8 @@ The model prediction gave an Accuracy: 0.7262
 
 #### Optimized Model V3
 
+[AlphabetSoupCharity_Optimized_V3.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V3.keras)
+
 The third optimization run using the keras_tuner library had the following parameters:
 
 - Eight hidden layers with a number of neurons between 1 and 100 (first layer) and 1 and 50 (other layers) and activation function choice of either relu or tanh.
@@ -112,6 +120,8 @@ The third optimization run using the keras_tuner library had the following param
 The model prediction gave an Accuracy: 0.7269
 
 #### Optimized Model V4
+
+[AlphabetSoupCharity_Optimized_V4.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
 
 The fourth optimization run using the keras_tuner library had the following parameters:
 
