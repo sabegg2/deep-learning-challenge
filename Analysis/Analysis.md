@@ -95,6 +95,7 @@ The best model when ran with 60 trials produced:
 - Loss: 0.5507
 
 Model Summary:
+
 <img src="..\Images\hyperparameters_model1.png" width=200>
 
 #### Optimized Model V2
@@ -117,7 +118,8 @@ The best model when ran with 60 trials produced:
 - Loss: 0.5801
 
 Model Summary:
-<img src="Images\hyperparameters_model2.png" width=200>
+
+<img src="..\Images\hyperparameters_model2.png" width=200>
 
 #### Optimized Model V3
 
@@ -138,7 +140,8 @@ The best model when ran with 177 trials produced:
 - Loss: 0.5502
 
 Model Summary:
-<img src="Images\hyperparameters_model3.png" width=200>
+
+<img src="..\Images\hyperparameters_model3.png" width=200>
 
 #### Optimized Model V4
 
@@ -160,7 +163,8 @@ The best model when ran with 60 trials produced:
 - Loss: 0.4702
 
 Model Summary:
-<img src="Images\hyperparameters_model4.png" width=200>
+
+<img src="..\Images\hyperparameters_model4.png" width=200>
 
 ## Summary
 
