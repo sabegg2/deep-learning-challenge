@@ -97,15 +97,3 @@ The report should contain the following:
     - What steps did you take in your attempts to increase model performance?
 
 - Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
-
-# Directory
-
-Starter_code notebook preprocesses the data from charity_data.csv and creates five neural network models which aim to classify applicants as successful or unsuccessful.
-
-AlphabetSoupCharity_Optimisation notebook preprocesses the data slightly further and tests the same five model with this data.
-
-[Analysis.md](Analysis/Analysis.md) summarises the Project steps and outcomes.
-
-AlphabetSoupCharity.h5 is the first model created. All other models have their weights saved only in the corresponding folders (model01, model01pp, etc.).
-
-Resources folder contains the original data source charity_data.csv and a preprocessed version pp_charity_data.csv .
