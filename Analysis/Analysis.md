@@ -107,36 +107,21 @@ Here are the changes I made from the base model:
 
 - Five hidden layers with a number of neurons between 1 and 80 and activation function choice of either relu or tanh.
 - max_epochs=20
-- Removed 'SPECIAL_CONSIDERATIONS' (which was just 'Y'/'N') and 'ASK_AMT' (which was predominatly $5000) columns
+- Removed 'ASK_AMT' (which was predominatly $5000 and a then just one or two occurences of all other values) column, and added back in the 'NAME' column.
 - Creating more bins for rare occurrences in columns (specifically, created two Other bins Other1 and Other2 for the CLASSIFICATION column).
 - Decreased the number of values in the Other bin for APPLICATION_TYPE (speficically, set it to v<156 rather than v<528).
 - 60 trials
   
-The model prediction gave an Accuracy: 0.7290
+The model prediction gave an Accuracy: 0.7289
 
-## Further and Final Optimization
+## Final Optimization
 
-I kept the Name column for my final Optimized Model as I still hadn't reached the goal of 75% accuracy. Kepping the keras-tuner the same apart from lowering the epochs from 100 to 50 for time optimization.
+The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs.
+
+I made various attempts to better the accuracy of the initial optimised model: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve. This is useful if the number of epochs is high, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
+
+Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the Name column back into the model. A possible explaination is that this reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
 
 ## Summary:
 
-The final automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 0.45 loss, using a sigmoid activation function with input node of 76; 5 hidden layers at a 16, 21, 26, 11, 21, neurons split and 50 training epochs. Performing better than the non automized model. Keeping the Name column was crucial in achieving and and going beyond the target. This shows the importance of the shape of your datasets before you preprocess it.
-
-Overall we were able to consistently train and test a neural network which can accurrately predict the success outcome of a funding venture 72.5% of the time. It would fall upon the risk tolerance of the Alphabet Soup company to decide if this 72.5% accuracy is close enough to the target 75% for them to move forward with implementing the model in their decision making process.
-
-In reseraching I learned others were able to reach an accuracy of over 80% by including the 'NAME' feature back into the algorithm and normalizing it. The explanation being that it reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
-
-In the future I would change the model to try a different input activation and increase the number of nodes and hidden layers. Often the shape of the input data can be an important factor in the accuracy and success of a model. While increasing the number of hidden layers and neurons in each layer can improve the overall accuracy as well.
-
-
-Summary of Results
-
-Overall the deep learning model did give near 73% accuracy on a dataset with many dimensions and with some complexity.
-Whilst this didn't quite meet the desired performance goal of 75%, the optimization resulted in a decrease for the number of neuron's required with only one additional layer required, compared to my initial model
-
-Alternative Model
-
-An alternative model to the one used within my analysis is the Random Forest algorithm
-This model is widely used within the finance industry
-The model can be easily scaled to large datasets, is typically good at not overfitting to data, and is resillient to noisy data
-The random forest model works by creating random predictions from decision trees and creates an average of these results to build a model
+The final automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 0.45 loss, using a sigmoid activation function with input node of 76; 5 hidden layers at a 16, 21, 26, 11, 21, neurons split and 50 training epochs. Performing better than the non automized model. Keeping the Name column was crucial in achieving and and going beyond the target. This shows the importance of the shape of your datasets before you preprocess it. The explanation being that it reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
