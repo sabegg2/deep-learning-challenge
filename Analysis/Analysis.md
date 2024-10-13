@@ -53,6 +53,7 @@ I've created a tool for the nonprofit foundation Alphabet Soup that can help it 
 ### 2: Compiling, Training, and Evaluating the Model
 
 [AlphabetSoupCharity_InitialModel.ipynb](../Notebooks/AlphabetSoupCharity_InitialModel.ipynb)
+
 [AlphabetSoupCharity.keras](../Models_keras_files/AlphabetSoupCharity.keras)
 
 I build the base model with the following parameters with low computation time in mind:
@@ -88,6 +89,7 @@ My attempt to optimize the model made use of the keras_tuner library This provid
 #### Optimized Model V1
 
 [AlphabetSoupCharity_Optimization_V1.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V1.ipynb)
+
 [AlphabetSoupCharity_Optimized_V1.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V1.keras)
 
 The first optimization run using the keras_tuner library had the following options:
@@ -109,6 +111,7 @@ Model Summary:
 #### Optimized Model V2
 
 [AlphabetSoupCharity_Optimization_V2.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V2.ipynb)
+
 [AlphabetSoupCharity_Optimized_V2.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
 
 The first optimization run using the keras_tuner library had the following options:
@@ -133,6 +136,7 @@ Model Summary:
 #### Optimized Model V3
 
 [AlphabetSoupCharity_Optimization_V3.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V3.ipynb)
+
 [AlphabetSoupCharity_Optimized_V3.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V3.keras)
 
 The third optimization run using the keras_tuner library had the following options:
@@ -156,6 +160,7 @@ Model Summary:
 #### Optimized Model V4
 
 [AlphabetSoupCharity_Optimization_V4.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V4.ipynb)
+
 [AlphabetSoupCharity_Optimized_V4.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
 
 The third optimization run using the keras_tuner library had the following options:
