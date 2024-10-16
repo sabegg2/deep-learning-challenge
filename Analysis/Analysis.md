@@ -4,7 +4,7 @@
 
 ## Overview:
 
-I've created a tool for the nonprofit foundation Alphabet Soup that can help it select applicants for funding with the best chance of success in their ventures. Using my knowledge of machine learning and neural networks, I have used the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. We were set a target of 75% accuracy for our model. From Alphabet Soup’s business team, I received a CSV [charity_data.csv](../Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
+We were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, the features in the provided dataset were used to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target of model accuracy was 75% accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](../Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
 
 - `EIN` and `NAME` — Identification columns
 - `APPLICATION_TYPE` — Alphabet Soup application type
@@ -26,29 +26,29 @@ I've created a tool for the nonprofit foundation Alphabet Soup that can help it 
 
 - `EIN` and `NAME` columns removed from the input data because they are neither targets nor features ('EIN' is a unique reference number given to each organization requesting/receiving funding, and `NAME` is the name of the organization making a request/receiving funding from the foundation)
 
-- Created cutoff point to bin "rare" categorical variables together in a new value, `Other`, for both `CLASSIFICATION` and `APPLICATION_TYPE`. ('CLASSIFICATION' - Due to the numebr of unique values within this column, the values have been 'binned' into an Other category if the value is < 1883. 'APPLICATION_TYPE' - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 528.)
+- Cutoff points were created to bin "rare" categorical variables together in a new value, `Other`, for both `CLASSIFICATION` and `APPLICATION_TYPE`. ('CLASSIFICATION' - Due to the numebr of unique values within this column, the values have been 'binned' into an Other category if the value is < 1883. 'APPLICATION_TYPE' - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 528.)
 
-- Converted categorical data to numeric with pd.get_dummies.
+- Categorical data was converged numeric with pd.get_dummies.
 
-- Split the preprocessed data into features and target arrays.
+- The preprocessed data was split into features and target arrays.
   
-- Split into training and tesing datasets.
+  - Target Variable for the model:
 
-- Target Variable for the model:
-
-    - `IS_SUCCESSFUL`
+      - `IS_SUCCESSFUL`
       
-- Feature Variables for the model:
+  - Feature Variables for the model:
 
-    - `APPLICATION_TYPE`
-    - `AFFILIATION`
-    - `CLASSIFICATION`
-    - `USE_CASE`
-    - `ORGANIZATION`
-    - `STATUS`
-    - `INCOME_AMT`
-    - `SPECIAL_CONSIDERATIONS`
-    - `ASK_AMT`
+      - `APPLICATION_TYPE`
+      - `AFFILIATION`
+      - `CLASSIFICATION`
+      - `USE_CASE`
+      - `ORGANIZATION`
+      - `STATUS`
+      - `INCOME_AMT`
+      - `SPECIAL_CONSIDERATIONS`
+      - `ASK_AMT`
+   
+- The preprocessed was split into training and tesing datasets.
  
 ### 2: Compiling, Training, and Evaluating the Model
 
@@ -56,7 +56,7 @@ I've created a tool for the nonprofit foundation Alphabet Soup that can help it 
 
 [AlphabetSoupCharity.keras](../Models_keras_files/AlphabetSoupCharity.keras)
 
-I build the base model with the following parameters with low computation time in mind:
+The base base neural network model was built using the `tenserflow` library `keras` package  with the following parameters with low computation time in mind:
 
 - Two hidden layers with 80, 30 neurons split. The hidden layer activation function was set to relu.
 
@@ -64,9 +64,9 @@ I build the base model with the following parameters with low computation time i
 
 The model prediction gave an Accuracy: 0.7284.
   
-(Note that I also tried other techniques for the base model, such as: I increased the hidden layers to 3 and set the third hidden layer at 30. I also tried using the tanh activation and 3 hidden layers with 90, 30, 30 neurons split and a sigmoid activation for output. I also experimented with increasing nodes and neurons. But despite doing this all models came below the 75% threshold.)
+(Note that other techniques were also tried for the base model, such as: increasing the hidden layers to 3 and setting the third hidden layer at 30; using the tanh activation and 3 hidden layers with 90, 30, 30 neurons split and a sigmoid activation for output; experimenting with increasing nodes and neurons. But despite doing this all models came below the 75% accuracy threshold.)
 
-Model Summary and loss and accuraccy plots from model training:
+Model Summary and loss and accuracy plots from model training:
 
 <img src="..\Images\parameters_initialmodel.png" width=200>
 <img src="..\Images\plot_loss.png" width=400> <img src="..\Images\plot_accuracy.png" width=400>
@@ -76,7 +76,7 @@ Model Summary and loss and accuraccy plots from model training:
 
 The goal was to get the accuracy of the model to at least 75%.
 
-My attempt to optimize the model made use of the keras_tuner library This provides the ability to test a number of different options for the model, including:
+Attempts to optimize the model made use of the `keras_tuner` library. This provides the ability to test a number of different options for the model, including:
 
 - The number of different hidden layers within the model
 
@@ -186,8 +186,8 @@ Model Summary:
 
 The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs.
 
-I made various attempts to better the accuracy of the initial optimised model: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve. This is useful if the number of epochs is high, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
+Various attempts were made to better the accuracy of the initial optimised model. These attempts included combinations of the following: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
 
-Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the Name column back into the model. A possible explaination is that this reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
+Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. A possible explaination is that this reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
 
-After adding the Name column back into the model, the final (i.e. V4) automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 47% loss. This model used a tanh activation function with input node of 56 neurons and 5 hidden layers at a 16, 11, 16, 16, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. Keeping the Name column was crucial in achieving and and going beyond the target. This shows the importance of the shape of your datasets before you preprocess it. 
+After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 47% loss. This model used a tanh activation function with input node of 56 neurons and 5 hidden layers at a 16, 11, 16, 16, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. Keeping the `NAME` column was crucial in achieving and and going beyond the target. This shows the importance of the shape of datasets before you preprocess it. 
