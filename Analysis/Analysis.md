@@ -26,7 +26,7 @@ We were tasked with creating a tool for the nonprofit foundation Alphabet Soup t
 
 - `EIN` and `NAME` columns removed from the input data because they are neither targets nor features ('EIN' is a unique reference number given to each organization requesting/receiving funding, and `NAME` is the name of the organization making a request/receiving funding from the foundation)
 
-- Cutoff points were created to bin "rare" categorical variables together in a new value, `Other`, for both `CLASSIFICATION` and `APPLICATION_TYPE`. (`CLASSIFICATION` - Due to the numebr of unique values within this column, the values have been 'binned' into an Other category if the value is < 1883. `APPLICATION_TYPE` - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 528.)
+- Cutoff points were created to bin "rare" categorical variables together in a new value, `Other`, for both `CLASSIFICATION` and `APPLICATION_TYPE`. (`CLASSIFICATION` - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 1883. `APPLICATION_TYPE` - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 528.)
 
 - Categorical data was converged numeric with pd.get_dummies.
 
@@ -48,7 +48,7 @@ We were tasked with creating a tool for the nonprofit foundation Alphabet Soup t
       - `SPECIAL_CONSIDERATIONS`
       - `ASK_AMT`
    
-- The preprocessed was split into training and tesing datasets.
+- The preprocessed was split into training and testing datasets.
  
 ### 2: Compiling, Training, and Evaluating the Model
 
@@ -60,7 +60,7 @@ The base base neural network model was built using the `tenserflow` library `ker
 
 - Two hidden layers with 80, 30 neurons split. The hidden layer activation function was set to relu.
 
-- Output node is 1 neuron as it was binary classifier model with only one output: was the funding application succesful, yes or no? The output layer activation function was set to sigmoid as the model output is binary classification between 0 and 1.
+- Output node is 1 neuron as it was binary classifier model with only one output: was the funding application successful, yes or no? The output layer activation function was set to sigmoid as the model output is binary classification between 0 and 1.
 
 The model prediction gave an Accuracy: 0.7284.
   
@@ -121,7 +121,7 @@ The first optimization run using the keras_tuner library had the following optio
     - tanh
 - Up to 80 nodes in the input layer, and up to 40 nodes in the hidden layers
 - 20 epochs
-- Added a learning rate choice, which alows Keras Tuner to explore different learning rates. The learning rate is a critical hyperparameter that can significantly impact the training of the model.
+- Added a learning rate choice, which allows Keras Tuner to explore different learning rates. The learning rate is a critical hyperparameter that can significantly impact the training of the model.
 - Include dropout layers to reduce overfitting by randomly setting a fraction of input units to 0 at each update during training.
 - Added L2 regularization to the dense layers to help prevent overfitting.
   
@@ -170,9 +170,9 @@ The third optimization run using the keras_tuner library had the following optio
     - tanh
 - Up to 100 nodes in the input layer, and up to 50 nodes in the hidden layers
 - 20 epochs
-- Removed 'ASK_AMT' (which was predominatly $5000 and a then just one or two occurences of all other values) column, and added back in the 'NAME' column.
+- Removed 'ASK_AMT' (which was predominantly $5000 and a then just one or two occurrences of all other values) column, and added back in the 'NAME' column.
 - Created more bins for rare occurrences in columns (specifically, created two Other bins Other1 and Other2 for the CLASSIFICATION column).
-- Decreased the number of values in the Other bin for APPLICATION_TYPE (speficically, set it to v<156 rather than v<528).
+- Decreased the number of values in the Other bin for APPLICATION_TYPE (specifically, set it to v<156 rather than v<528).
   
 The best model when ran with 60 trials produced:
 - Accuracy: 0.7967
@@ -186,8 +186,8 @@ Model Summary:
 
 The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs.
 
-Various attempts were made to better the accuracy of the initial optimised model. These attempts included combinations of the following: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
+Various attempts were made to better the accuracy of the initial optimized model. These attempts included combinations of the following: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
 
-Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. A possible explaination is that this reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
+Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. A possible explanation is that this reduces some of the "noise" in the oversampled data and allows the algorithm to further classify the data.
 
 After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 47% loss. This model used a tanh activation function with input node of 56 neurons and 5 hidden layers at a 16, 11, 16, 16, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. Keeping the `NAME` column was crucial in achieving and and going beyond the target. This shows the importance of the shape of datasets before you preprocess it. 
