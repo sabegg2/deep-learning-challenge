@@ -26,7 +26,7 @@ We were tasked with creating a tool for the nonprofit foundation Alphabet Soup t
 
 - `EIN` and `NAME` columns removed from the input data because they are neither targets nor features ('EIN' is a unique reference number given to each organization requesting/receiving funding, and `NAME` is the name of the organization making a request/receiving funding from the foundation)
 
-- Cutoff points were created to bin "rare" categorical variables together in a new value, `Other`, for both `CLASSIFICATION` and `APPLICATION_TYPE`. ('CLASSIFICATION' - Due to the numebr of unique values within this column, the values have been 'binned' into an Other category if the value is < 1883. 'APPLICATION_TYPE' - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 528.)
+- Cutoff points were created to bin "rare" categorical variables together in a new value, `Other`, for both `CLASSIFICATION` and `APPLICATION_TYPE`. (`CLASSIFICATION` - Due to the numebr of unique values within this column, the values have been 'binned' into an Other category if the value is < 1883. `APPLICATION_TYPE` - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 528.)
 
 - Categorical data was converged numeric with pd.get_dummies.
 
