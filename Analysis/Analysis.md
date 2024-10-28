@@ -2,7 +2,7 @@
 - Module 21 Challenge
 - Steph Abegg
 
-## Refresher on Nerual Network Models
+## Refresher on Neural Network Models:
 
 Neural network models are a class of machine learning algorithms inspired by the structure and function of the human brain. They are composed of layers of interconnected units called neurons (also known as nodes), which process information and learn to make predictions or decisions based on the input data.
 
