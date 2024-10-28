@@ -4,6 +4,8 @@
 
 ## Overview:
 
+Neural network models are a class of machine learning algorithms inspired by the structure and function of the human brain. They are composed of layers of interconnected units called neurons (also known as nodes), which process information and learn to make predictions or decisions based on the input data.
+
 We were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, the features in the provided dataset were used to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target of model accuracy was 75% accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](../Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
 
 - `EIN` and `NAME` — Identification columns
