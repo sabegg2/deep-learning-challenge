@@ -58,13 +58,13 @@ We were tasked with creating a tool for the nonprofit foundation Alphabet Soup t
 
 The base base neural network model was built using the `tenserflow` library `keras` package  with the following parameters with low computation time in mind:
 
-- Two hidden layers with 80, 30 neurons split. The hidden layer activation function was set to relu.
+- Two hidden layers with 80, 30 neurons split. The hidden layer activation function was set to relu. (ReLU--Rectified Linear Unit--is generally preferred for deep neural networks due to faster convergence and fewer issues with vanishing gradients, although it can suffer from the "dying ReLU" problem, where neurons can stop learning if they output zero consistently. The other popular activation choices is tanh--hyperbolic tangent--which can be useful in specific contexts where the model benefits from output values that are symmetric around zero, though it's more prone to vanishing gradients.)
 
 - Output node is 1 neuron as it was binary classifier model with only one output: was the funding application successful, yes or no? The output layer activation function was set to sigmoid as the model output is binary classification between 0 and 1.
 
 The model prediction gave an Accuracy: 0.7284.
   
-(Note that other techniques were also tried for the base model, such as: increasing the hidden layers to 3 and setting the third hidden layer at 30; using the tanh activation and 3 hidden layers with 90, 30, 30 neurons split and a sigmoid activation for output; experimenting with increasing nodes and neurons. But despite doing this all models came below the 75% accuracy threshold.)
+(Note that other techniques were also tried for the base model, such as: increasing the hidden layers to 3 and setting the third hidden layer at 30 neurons; using the tanh activation, experimenting with different numbers of neurons in the hidden layers. But despite doing this all models came below the 75% accuracy threshold.)
 
 Model Summary and loss and accuracy plots from model training:
 
