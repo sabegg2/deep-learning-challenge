@@ -2,9 +2,24 @@
 - Module 21 Challenge
 - Steph Abegg
 
-## Overview:
+## Refresher on Nerual Network Models
 
 Neural network models are a class of machine learning algorithms inspired by the structure and function of the human brain. They are composed of layers of interconnected units called neurons (also known as nodes), which process information and learn to make predictions or decisions based on the input data.
+
+Key Components of Neural Networks:
+
+- Neurons (Nodes): The basic unit of a neural network. Each neuron takes in multiple inputs, processes them through a weighted sum, and applies an activation function to produce an output.
+
+- Layers: Neural networks are organized in layers:
+  - Input layer: Receives the raw data (e.g., images, text, numerical data).
+  - Hidden layers: Intermediate layers between the input and output layers. These layers perform complex transformations on the   - input data through learned weights.
+  - Output layer: Produces the final predictions (e.g., classification labels, regression values).
+
+- Weights and Biases: Weights are the parameters that the model learns during training, which determine the importance of each input to a neuron. Biases are additional parameters added to the weighted sum to allow the model more flexibility.
+
+- Activation Functions: Activation functions introduce non-linearity to the network, enabling it to learn complex patterns. Common activation functions include ReLU, sigmoid, and tanh.
+
+## Overview of the Challenge:
 
 We were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, the features in the provided dataset were used to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target of model accuracy was 75% accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](../Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
 
