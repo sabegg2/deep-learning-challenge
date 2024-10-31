@@ -22,7 +22,7 @@ Key Components of Neural Networks:
 
 ## Overview of the Challenge:
 
-We were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, the features in the provided dataset were used to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target of model accuracy was 75% accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](../Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
+We were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, the features in the provided dataset were used to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target of model accuracy was 75% accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
 
 - `EIN` and `NAME` — Identification columns
 - `APPLICATION_TYPE` — Alphabet Soup application type
@@ -70,9 +70,9 @@ We were tasked with creating a tool for the nonprofit foundation Alphabet Soup t
  
 ### 2: Compiling, Training, and Evaluating the Model
 
-[AlphabetSoupCharity_InitialModel.ipynb](../Notebooks/AlphabetSoupCharity_InitialModel.ipynb)
+[AlphabetSoupCharity_InitialModel.ipynb](Notebooks/AlphabetSoupCharity_InitialModel.ipynb)
 
-[AlphabetSoupCharity.keras](../Models_keras_files/AlphabetSoupCharity.keras)
+[AlphabetSoupCharity.keras](Models_keras_files/AlphabetSoupCharity.keras)
 
 The base base neural network model was built using the `tenserflow` library `keras` package  with the following parameters with low computation time in mind:
 
@@ -86,8 +86,8 @@ The model prediction gave an Accuracy: 0.7292 and Loss: 0.5591.
 
 Model Summary and loss and accuracy plots from model training:
 
-<img src="..\Images\parameters_initialmodel.png" width=500>
-<img src="..\Images\plot_loss.png" width=400> <img src="..\Images\plot_accuracy.png" width=400>
+<img src="Images\parameters_initialmodel.png" width=500>
+<img src="Images\plot_loss.png" width=400> <img src="Images\plot_accuracy.png" width=400>
 
 
 ### 3: Optimize the Model
@@ -106,9 +106,9 @@ Attempts to optimize the model made use of the `keras_tuner` library. This provi
 
 #### Optimized Model V1
 
-[AlphabetSoupCharity_Optimization_V1.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V1.ipynb)
+[AlphabetSoupCharity_Optimization_V1.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V1.ipynb)
 
-[AlphabetSoupCharity_Optimized_V1.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V1.keras)
+[AlphabetSoupCharity_Optimized_V1.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V1.keras)
 
 The first optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -124,13 +124,13 @@ The best model when ran with 60 trials produced:
 
 Model Summary:
 
-<img src="..\Images\hyperparameters_model1.png" width=200>
+<img src="Images\hyperparameters_model1.png" width=200>
 
 #### Optimized Model V2
 
-[AlphabetSoupCharity_Optimization_V2.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V2.ipynb)
+[AlphabetSoupCharity_Optimization_V2.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V2.ipynb)
 
-[AlphabetSoupCharity_Optimized_V2.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
+[AlphabetSoupCharity_Optimized_V2.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
 
 The first optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -149,13 +149,13 @@ The best model when ran with 60 trials produced:
 
 Model Summary:
 
-<img src="..\Images\hyperparameters_model2.png" width=200>
+<img src="Images\hyperparameters_model2.png" width=200>
 
 #### Optimized Model V3
 
-[AlphabetSoupCharity_Optimization_V3.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V3.ipynb)
+[AlphabetSoupCharity_Optimization_V3.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V3.ipynb)
 
-[AlphabetSoupCharity_Optimized_V3.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V3.keras)
+[AlphabetSoupCharity_Optimized_V3.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V3.keras)
 
 The third optimization run using the keras_tuner library had the following options:
 - 1-8 Hidden Layers
@@ -173,13 +173,13 @@ The best model when ran with 177 trials produced:
 
 Model Summary:
 
-<img src="..\Images\hyperparameters_model3.png" width=200>
+<img src="Images\hyperparameters_model3.png" width=200>
 
 #### Optimized Model V4
 
-[AlphabetSoupCharity_Optimization_V4.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V4.ipynb)
+[AlphabetSoupCharity_Optimization_V4.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V4.ipynb)
 
-[AlphabetSoupCharity_Optimized_V4.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
+[AlphabetSoupCharity_Optimized_V4.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
 
 The third optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -198,7 +198,7 @@ The best model when ran with 60 trials produced:
 
 Model Summary:
 
-<img src="..\Images\hyperparameters_model4.png" width=200>
+<img src="Images\hyperparameters_model4.png" width=200>
 
 ## Summary
 
