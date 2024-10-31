@@ -181,14 +181,38 @@ Model Summary:
 
 [AlphabetSoupCharity_Optimized_V4.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
 
-The third optimization run using the keras_tuner library had the following options:
+The fourth optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
 - Activation functions either:
     - relu
     - tanh
 - Up to 100 nodes in the input layer, and up to 50 nodes in the hidden layers
 - 20 epochs
-- Removed 'ASK_AMT' (which was predominantly $5000 and a then just one or two occurrences of all other values) column, and added back in the 'NAME' column.
+- Added back in the 'NAME' column.
+  
+The best model when ran with 60 trials produced:
+- Accuracy: 0.7967
+- Loss: 0.4706
+
+Model Summary:
+
+<img src="Images\hyperparameters_model4.png" width=200>
+
+#### Optimized Model V5
+
+[AlphabetSoupCharity_Optimization_V5.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V5.ipynb)
+
+[AlphabetSoupCharity_Optimized_V5.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V5.keras)
+
+The fifth optimization run using the keras_tuner library had the following options:
+- 1-5 Hidden Layers
+- Activation functions either:
+    - relu
+    - tanh
+- Up to 100 nodes in the input layer, and up to 50 nodes in the hidden layers
+- 20 epochs
+- Removed 'ASK_AMT' (which was predominantly $5000 and a then just one or two occurrences of all other values) column.
+- Added back in the 'NAME' column.
 - Created more bins for rare occurrences in columns (specifically, created two Other bins Other1 and Other2 for the CLASSIFICATION column).
 - Decreased the number of values in the Other bin for APPLICATION_TYPE (specifically, set it to v<156 rather than v<528).
   
@@ -198,7 +222,7 @@ The best model when ran with 60 trials produced:
 
 Model Summary:
 
-<img src="Images\hyperparameters_model4.png" width=200>
+<img src="Images\hyperparameters_model5.png" width=200>
 
 ## Summary
 
