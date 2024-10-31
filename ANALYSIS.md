@@ -22,7 +22,7 @@ Key Components of Neural Networks:
 
 ## Overview of the Challenge:
 
-We were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, the features in the provided dataset were used to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target of model accuracy was 75% accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
+In this module challenge, we were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, we used the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target was 75% model accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
 
 - `EIN` and `NAME` — Identification columns
 - `APPLICATION_TYPE` — Alphabet Soup application type
@@ -42,11 +42,11 @@ We were tasked with creating a tool for the nonprofit foundation Alphabet Soup t
 
 - Dataset was checked for null and duplicated values
 
-- `EIN` and `NAME` columns removed from the input data because they are neither targets nor features ('EIN' is a unique reference number given to each organization requesting/receiving funding, and `NAME` is the name of the organization making a request/receiving funding from the foundation)
+- `EIN` and `NAME` columns removed from the input data because they are neither targets nor features ('EIN' is a unique reference number given to each organization requesting/receiving funding, and `NAME` is the name of the organization making a request/receiving funding from the foundation).
 
 - Cutoff points were created to bin "rare" categorical variables together in a new value, `Other`, for both `CLASSIFICATION` and `APPLICATION_TYPE`. (`CLASSIFICATION` - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 1883. `APPLICATION_TYPE` - Due to the number of unique values within this column, the values have been 'binned' into an Other category if the value is < 528.)
 
-- Categorical data was converged numeric with pd.get_dummies.
+- Categorical data was conveted into numeric with pd.get_dummies.
 
 - The preprocessed data was split into features and target arrays.
   
@@ -132,7 +132,7 @@ Model Summary:
 
 [AlphabetSoupCharity_Optimized_V2.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
 
-The first optimization run using the keras_tuner library had the following options:
+The second optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
 - Activation functions either:
     - relu
