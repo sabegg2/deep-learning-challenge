@@ -28,18 +28,18 @@ From Alphabet Soup’s business team, you have received a CSV containing more th
 
 ## Preprocess the Data
 
-Using your knowledge of Pandas and scikit-learn’s StandardScaler(), you’ll need to preprocess the dataset. This step prepares you for Step 2, where you'll compile, train, and evaluate the neural network model.
+Using your knowledge of Pandas and scikit-learn’s `StandardScaler()`, you’ll need to preprocess the dataset. This step prepares you for Step 2, where you'll compile, train, and evaluate the neural network model.
 
-- Read in the charity_data.csv to a Pandas DataFrame, and be sure to identify the following in your dataset:
+- Read in the `charity_data.csv` to a Pandas DataFrame, and be sure to identify the following in your dataset:
     - What variable(s) are the target(s) for your model?
     - What variable(s) are the feature(s) for your model?
-- Drop the EIN and NAME columns.
+- Drop the `EIN` and `NAME` columns.
 - Determine the number of unique values for each column.
 - For columns that have more than 10 unique values, determine the number of data points for each unique value.
-- Use the number of data points for each unique value to pick a cutoff point to bin "rare" categorical variables together in a new value, Other, and then check if the binning was successful.
-- Use pd.get_dummies() to encode categorical variables.
-- Split the preprocessed data into a features array, X, and a target array, y. Use these arrays and the train_test_split function to split the data into training and testing datasets.
-- Scale the training and testing features datasets by creating a StandardScaler instance, fitting it to the training data, then using the transform function.
+- Use the number of data points for each unique value to pick a cutoff point to bin "rare" categorical variables together in a new value, `Other`, and then check if the binning was successful.
+- Use `pd.get_dummies()` to encode categorical variables.
+- Split the preprocessed data into a features array, `X`, and a target array, `y`. Use these arrays and the `train_test_split` function to split the data into training and testing datasets.
+- Scale the training and testing features datasets by creating a `StandardScaler` instance, fitting it to the training data, then using the `transform` function.
 
 ## Compile, Train, and Evaluate the Model
 
@@ -54,7 +54,7 @@ Using your knowledge of TensorFlow, you’ll design a neural network, or deep le
 - Compile and train the model.
 - Create a callback that saves the model's weights every five epochs.
 - Evaluate the model using the test data to determine the loss and accuracy.
-- Save and export your results to an HDF5 file. Name the file AlphabetSoupCharity.h5.
+- Save and export your results to an HDF5 file. Name the file `AlphabetSoupCharity.h5`.
 
 ## Optimize the Model
 
@@ -66,18 +66,18 @@ Use any or all of the following methods to optimize your model:
     - Dropping more or fewer columns.
     - Creating more bins for rare occurrences in columns.
     - Increasing or decreasing the number of values for each bin.
-- Add more neurons to a hidden layer.
-- Add more hidden layers.
-- Use different activation functions for the hidden layers.
-- Add or reduce the number of epochs to the training regimen.
+    - Add more neurons to a hidden layer.
+    - Add more hidden layers.
+    - Use different activation functions for the hidden layers.
+    - Add or reduce the number of epochs to the training regimen.
 
 Note: If you make at least three attempts at optimizing your model, you will not lose points if your model does not achieve target performance.
 
-- Create a new Google Colab file and name it AlphabetSoupCharity_Optimization.ipynb.
-- Import your dependencies and read in the charity_data.csv to a Pandas DataFrame.
+- Create a new Google Colab file and name it `AlphabetSoupCharity_Optimization.ipynb`.
+- Import your dependencies and read in the `charity_data.csv` to a Pandas DataFrame.
 - Preprocess the dataset as you did in Step 1. Be sure to adjust for any modifications that came out of optimizing the model.
 - Design a neural network model, and be sure to adjust for modifications that will optimize the model to achieve higher than 75% accuracy.
-- Save and export your results to an HDF5 file. Name the file AlphabetSoupCharity_Optimization.h5.
+- Save and export your results to an HDF5 file. Name the file `AlphabetSoupCharity_Optimization.h5`.
 
 
 ## Write a Report on the Neural Network Model
