@@ -80,7 +80,7 @@ The base base neural network model was built using the `tenserflow` library `ker
 
 - Output node is 1 neuron as it was binary classifier model with only one output: was the funding application successful, yes or no? The output layer activation function was set to sigmoid as the model output is binary classification between 0 and 1.
 
-The model prediction gave an Accuracy: 0.7292.
+The model prediction gave an Accuracy: 0.7292 and Loss: 0.5591.
   
 (Note that other techniques were also tried for the base model, such as: increasing the hidden layers to 3 and setting the third hidden layer at 30 neurons; using the tanh activation, experimenting with different numbers of neurons in the hidden layers. But despite doing this all models came below the 75% accuracy threshold.)
 
@@ -168,8 +168,8 @@ The third optimization run using the keras_tuner library had the following optio
 - Implemented Early Stopping as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
   
 The best model when ran with 177 trials produced:
-- Accuracy: 0.7343 
-- Loss: 0.5538
+- Accuracy: 0.7336 
+- Loss: 0.5541
 
 Model Summary:
 
@@ -193,8 +193,8 @@ The third optimization run using the keras_tuner library had the following optio
 - Decreased the number of values in the Other bin for APPLICATION_TYPE (specifically, set it to v<156 rather than v<528).
   
 The best model when ran with 60 trials produced:
-- Accuracy: 0.7967
-- Loss: 0.4702
+- Accuracy: 0.7958
+- Loss: 0.6717
 
 Model Summary:
 
@@ -202,10 +202,10 @@ Model Summary:
 
 ## Summary
 
-The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs.
+The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs. The model prediction gave an Accuracy: 0.7292 and Loss: 0.5591. Accuracy measures the proportion of correct predictions made by the model out of all predictions. Loss is a measure of how far the predicted values are from the true values (i.e., the actual labels). It's essentially a penalty for incorrect predictions.
 
 Various attempts were made to better the accuracy of the initial optimized model. These attempts included combinations of the following: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
 
-Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 47% loss. This model used a tanh activation function with input node of 56 neurons and 5 hidden layers at a 16, 11, 16, 16, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. 
+Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy. This model used a tanh activation function with input node of 36 neurons and 5 hidden layers at a 16, 11, 16, 16, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. However, the model did have a high loss, of 67%.
 
 This likely indicates that the name feature is providing valuable information to the model, either directly (like reflecting demographics) or indirectly (as a proxy for other relevant factors). The names in this dataset are things like "Blue Knights Motorcycle Club", "Genetic Research Institute of the Desert", or "Joseph E Peebles Foundation". While there are thousands of different names, there are some repeated words, such as "Club", "Institute", or "Foundation" that might carry some information that the machine learning model can use. This shows the imporatnce of not discounting the possible information carried by any variable.
