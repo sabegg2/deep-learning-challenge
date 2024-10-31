@@ -191,8 +191,8 @@ The fourth optimization run using the keras_tuner library had the following opti
 - Added back in the 'NAME' column.
   
 The best model when ran with 60 trials produced:
-- Accuracy: 0.7967
-- Loss: 0.4706
+- Accuracy: 0.7964
+- Loss: 0.4569
 
 Model Summary:
 
@@ -228,7 +228,9 @@ Model Summary:
 
 The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs. The model prediction gave an accuracy of 72.9% and loss of 55.9%. Accuracy measures the proportion of correct predictions made by the model out of all predictions. Loss is a measure of how far the predicted values are from the true values, as well as the confidence of the prediction; loss is essentially a penalty for incorrect predictions.
 
-Various attempts were made to better the accuracy of the initial optimized model. These attempts included combinations of the following: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
+The goal was to get the model accuracy to at least 75%. At the same time, it would be ideal to lower the model loss.
+
+Various attempts were made to better the accuracy of the initial optimized model. These attempts included combinations of the following: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve, dropping more (namely `ASK_AMT`) or fewer (namely `NAME`) columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
 
 Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 79.7% prediction accuracy and 47.1% loss. This model used a tanh activation function with input node of 11 neurons and 5 hidden layers at a 6, 36, 31, 36, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. 
 
