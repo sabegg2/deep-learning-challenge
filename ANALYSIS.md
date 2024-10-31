@@ -193,8 +193,8 @@ The third optimization run using the keras_tuner library had the following optio
 - Decreased the number of values in the Other bin for APPLICATION_TYPE (specifically, set it to v<156 rather than v<528).
   
 The best model when ran with 60 trials produced:
-- Accuracy: 0.7958
-- Loss: 0.6717
+- Accuracy: 0.7967
+- Loss: 0.4706
 
 Model Summary:
 
@@ -206,6 +206,6 @@ The initial optimization model used five hidden layers with a number of neurons 
 
 Various attempts were made to better the accuracy of the initial optimized model. These attempts included combinations of the following: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
 
-Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy. This model used a tanh activation function with input node of 36 neurons and 5 hidden layers at a 16, 11, 16, 16, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. However, the model did have a high loss, of 67%. The high accuracy means that the model is correctly predicting the labels most of the time, while high loss indicates that the model's confidence in those predictions is low.
+Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 79.7% prediction accuracy and 47.1% loss. This model used a tanh activation function with input node of 36 neurons and 5 hidden layers at a 6, 36, 31, 36, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. 
 
 This likely indicates that the name feature is providing valuable information to the model, either directly (like reflecting demographics) or indirectly (as a proxy for other relevant factors). The names in this dataset are things like "Blue Knights Motorcycle Club", "Genetic Research Institute of the Desert", or "Joseph E Peebles Foundation". While there are thousands of different names, there are some repeated words, such as "Club", "Institute", or "Foundation" that might carry some information that the machine learning model can use. This shows the imporatnce of not discounting the possible information carried by any variable.
