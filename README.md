@@ -6,7 +6,7 @@
 
 This README contains the instructions for the challenge. My analysis is located here:
 
-[Analysis.md](Analysis/Analysis.md)
+[ANALYSIS.md](ANALYSIS.md)
 
 ## Scenario
 
