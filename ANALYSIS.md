@@ -1,3 +1,4 @@
+# deep-learning-challenge REPORT
 # Report on the Neural Network Model
 - Module 21 Challenge
 - Steph Abegg
@@ -79,7 +80,7 @@ The base base neural network model was built using the `tenserflow` library `ker
 
 - Output node is 1 neuron as it was binary classifier model with only one output: was the funding application successful, yes or no? The output layer activation function was set to sigmoid as the model output is binary classification between 0 and 1.
 
-The model prediction gave an Accuracy: 0.7284.
+The model prediction gave an Accuracy: 0.7292.
   
 (Note that other techniques were also tried for the base model, such as: increasing the hidden layers to 3 and setting the third hidden layer at 30 neurons; using the tanh activation, experimenting with different numbers of neurons in the hidden layers. But despite doing this all models came below the 75% accuracy threshold.)
 
@@ -118,8 +119,8 @@ The first optimization run using the keras_tuner library had the following optio
 - 20 epochs
   
 The best model when ran with 60 trials produced:
-- Accuracy: 0.7334
-- Loss: 0.5507
+- Accuracy: 0.7328
+- Loss: 0.5545
 
 Model Summary:
 
@@ -143,8 +144,8 @@ The first optimization run using the keras_tuner library had the following optio
 - Added L2 regularization to the dense layers to help prevent overfitting.
   
 The best model when ran with 60 trials produced:
-- Accuracy: 0.7329
-- Loss: 0.5801
+- Accuracy: 0.7317
+- Loss: 0.5632
 
 Model Summary:
 
