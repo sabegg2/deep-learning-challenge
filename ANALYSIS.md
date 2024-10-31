@@ -1,3 +1,4 @@
+# deep-learning-challenge REPORT
 # Report on the Neural Network Model
 - Module 21 Challenge
 - Steph Abegg
@@ -21,7 +22,7 @@ Key Components of Neural Networks:
 
 ## Overview of the Challenge:
 
-We were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, the features in the provided dataset were used to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target of model accuracy was 75% accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](../Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
+We were tasked with creating a tool for the nonprofit foundation Alphabet Soup that can help the foundation select applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, the features in the provided dataset were used to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup. The set target of model accuracy was 75% accuracy. Alphabet Soup’s business team provided a CSV [charity_data.csv](Resources/charity_data.csv) containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
 
 - `EIN` and `NAME` — Identification columns
 - `APPLICATION_TYPE` — Alphabet Soup application type
@@ -69,9 +70,9 @@ We were tasked with creating a tool for the nonprofit foundation Alphabet Soup t
  
 ### 2: Compiling, Training, and Evaluating the Model
 
-[AlphabetSoupCharity_InitialModel.ipynb](../Notebooks/AlphabetSoupCharity_InitialModel.ipynb)
+[AlphabetSoupCharity_InitialModel.ipynb](Notebooks/AlphabetSoupCharity_InitialModel.ipynb)
 
-[AlphabetSoupCharity.keras](../Models_keras_files/AlphabetSoupCharity.keras)
+[AlphabetSoupCharity.keras](Models_keras_files/AlphabetSoupCharity.keras)
 
 The base base neural network model was built using the `tenserflow` library `keras` package  with the following parameters with low computation time in mind:
 
@@ -79,14 +80,14 @@ The base base neural network model was built using the `tenserflow` library `ker
 
 - Output node is 1 neuron as it was binary classifier model with only one output: was the funding application successful, yes or no? The output layer activation function was set to sigmoid as the model output is binary classification between 0 and 1.
 
-The model prediction gave an Accuracy: 0.7284.
+The model prediction gave an Accuracy: 0.7292 and Loss: 0.5591.
   
 (Note that other techniques were also tried for the base model, such as: increasing the hidden layers to 3 and setting the third hidden layer at 30 neurons; using the tanh activation, experimenting with different numbers of neurons in the hidden layers. But despite doing this all models came below the 75% accuracy threshold.)
 
 Model Summary and loss and accuracy plots from model training:
 
-<img src="..\Images\parameters_initialmodel.png" width=500>
-<img src="..\Images\plot_loss.png" width=400> <img src="..\Images\plot_accuracy.png" width=400>
+<img src="Images\parameters_initialmodel.png" width=500>
+<img src="Images\plot_loss.png" width=400> <img src="Images\plot_accuracy.png" width=400>
 
 
 ### 3: Optimize the Model
@@ -105,9 +106,9 @@ Attempts to optimize the model made use of the `keras_tuner` library. This provi
 
 #### Optimized Model V1
 
-[AlphabetSoupCharity_Optimization_V1.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V1.ipynb)
+[AlphabetSoupCharity_Optimization_V1.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V1.ipynb)
 
-[AlphabetSoupCharity_Optimized_V1.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V1.keras)
+[AlphabetSoupCharity_Optimized_V1.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V1.keras)
 
 The first optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -118,18 +119,18 @@ The first optimization run using the keras_tuner library had the following optio
 - 20 epochs
   
 The best model when ran with 60 trials produced:
-- Accuracy: 0.7334
-- Loss: 0.5507
+- Accuracy: 0.7328
+- Loss: 0.5545
 
 Model Summary:
 
-<img src="..\Images\hyperparameters_model1.png" width=200>
+<img src="Images\hyperparameters_model1.png" width=200>
 
 #### Optimized Model V2
 
-[AlphabetSoupCharity_Optimization_V2.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V2.ipynb)
+[AlphabetSoupCharity_Optimization_V2.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V2.ipynb)
 
-[AlphabetSoupCharity_Optimized_V2.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
+[AlphabetSoupCharity_Optimized_V2.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
 
 The first optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -143,18 +144,18 @@ The first optimization run using the keras_tuner library had the following optio
 - Added L2 regularization to the dense layers to help prevent overfitting.
   
 The best model when ran with 60 trials produced:
-- Accuracy: 0.7329
-- Loss: 0.5801
+- Accuracy: 0.7317
+- Loss: 0.5632
 
 Model Summary:
 
-<img src="..\Images\hyperparameters_model2.png" width=200>
+<img src="Images\hyperparameters_model2.png" width=200>
 
 #### Optimized Model V3
 
-[AlphabetSoupCharity_Optimization_V3.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V3.ipynb)
+[AlphabetSoupCharity_Optimization_V3.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V3.ipynb)
 
-[AlphabetSoupCharity_Optimized_V3.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V3.keras)
+[AlphabetSoupCharity_Optimized_V3.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V3.keras)
 
 The third optimization run using the keras_tuner library had the following options:
 - 1-8 Hidden Layers
@@ -167,18 +168,18 @@ The third optimization run using the keras_tuner library had the following optio
 - Implemented Early Stopping as a callback during the tuning process to stop training when the validation loss does not improve. This is useful if the number of epochs is high.
   
 The best model when ran with 177 trials produced:
-- Accuracy: 0.7343 
-- Loss: 0.5538
+- Accuracy: 0.7336 
+- Loss: 0.5541
 
 Model Summary:
 
-<img src="..\Images\hyperparameters_model3.png" width=200>
+<img src="Images\hyperparameters_model3.png" width=200>
 
 #### Optimized Model V4
 
-[AlphabetSoupCharity_Optimization_V4.ipynb](../Notebooks/AlphabetSoupCharity_Optimization_V4.ipynb)
+[AlphabetSoupCharity_Optimization_V4.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V4.ipynb)
 
-[AlphabetSoupCharity_Optimized_V4.keras](../Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
+[AlphabetSoupCharity_Optimized_V4.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
 
 The third optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -193,18 +194,18 @@ The third optimization run using the keras_tuner library had the following optio
   
 The best model when ran with 60 trials produced:
 - Accuracy: 0.7967
-- Loss: 0.4702
+- Loss: 0.4706
 
 Model Summary:
 
-<img src="..\Images\hyperparameters_model4.png" width=200>
+<img src="Images\hyperparameters_model4.png" width=200>
 
 ## Summary
 
-The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs.
+The initial optimization model used five hidden layers with a number of neurons between 1 and 80 (first layer) and 1 and 40 (other layers) and activation function choice of either relu or tanh, and 20 epochs. The model prediction gave an accuracy of 72.9% and loss of 55.9%. Accuracy measures the proportion of correct predictions made by the model out of all predictions. Loss is a measure of how far the predicted values are from the true values, as well as the confidence of the prediction; loss is essentially a penalty for incorrect predictions.
 
 Various attempts were made to better the accuracy of the initial optimized model. These attempts included combinations of the following: adding a learning rate choice, including dropout layers to reduce overfitting, adding L2 regularization to the dense layers to help prevent overfitting, adding more neurons to a hidden layer, adding more hidden layers, using different activation functions for the hidden layers, adding more epochs to the training regimen, adding early stopping to stop training when the validation loss does not improve, dropping more or fewer columns, creating more bins for rare occurrences in columns, increasing or decreasing the number of values for each bin.
 
-Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 80% prediction accuracy with a 47% loss. This model used a tanh activation function with input node of 56 neurons and 5 hidden layers at a 16, 11, 16, 16, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. 
+Interestingly, most of these modifications did not give improvement over the initial optimization model. The one modification that did result in increasing the accuracy above 75% was adding the `NAME` column back into the model. After adding the `NAME` column back into the model, the automatically optimized neural network trained model from the keras tuner method achieved 79.7% prediction accuracy and 47.1% loss. This model used a tanh activation function with input node of 11 neurons and 5 hidden layers at a 6, 36, 31, 36, 21 neurons split and 20 training epochs, and a sigmoid output activation function. This model performed better than the non-automized model. 
 
 This likely indicates that the name feature is providing valuable information to the model, either directly (like reflecting demographics) or indirectly (as a proxy for other relevant factors). The names in this dataset are things like "Blue Knights Motorcycle Club", "Genetic Research Institute of the Desert", or "Joseph E Peebles Foundation". While there are thousands of different names, there are some repeated words, such as "Club", "Institute", or "Foundation" that might carry some information that the machine learning model can use. This shows the imporatnce of not discounting the possible information carried by any variable.
