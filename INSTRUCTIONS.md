@@ -4,9 +4,9 @@
 
 # Report on the Neural Network Model
 
-This README contains the instructions for the challenge. My analysis is located here:
+My analysis is located here:
 
-[ANALYSIS.md](ANALYSIS.md)
+[README.md](README.md)
 
 ## Scenario
 
