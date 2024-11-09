@@ -2,7 +2,7 @@
 - Module 21 Challenge
 - Steph Abegg
 
-# Report on the Neural Network Model
+## Report on the Neural Network Model
 
 My analysis is located here:
 
