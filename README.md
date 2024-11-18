@@ -110,7 +110,7 @@ Attempts to optimize the model made use of the `keras_tuner` library. This provi
 
 [AlphabetSoupCharity_Optimization_V1.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V1.ipynb)
 
-[AlphabetSoupCharity_Optimized_V1.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V1.keras)
+[AlphabetSoupCharity_Optimization_V1.h5](Models_h5_and_keras_files/AlphabetSoupCharity_Optimization_V1.h5)
 
 The first optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -132,7 +132,7 @@ Model Summary:
 
 [AlphabetSoupCharity_Optimization_V2.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V2.ipynb)
 
-[AlphabetSoupCharity_Optimized_V2.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V2.keras)
+[AlphabetSoupCharity_Optimization_V2.h5](Models_h5_and_keras_files/AlphabetSoupCharity_Optimization_V2.h5)
 
 The second optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -157,7 +157,7 @@ Model Summary:
 
 [AlphabetSoupCharity_Optimization_V3.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V3.ipynb)
 
-[AlphabetSoupCharity_Optimized_V3.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V3.keras)
+[AlphabetSoupCharity_Optimization_V3.h5](Models_h5_and_keras_files/AlphabetSoupCharity_Optimization_V3.h5)
 
 The third optimization run using the keras_tuner library had the following options:
 - 1-8 Hidden Layers
@@ -181,7 +181,7 @@ Model Summary:
 
 [AlphabetSoupCharity_Optimization_V4.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V4.ipynb)
 
-[AlphabetSoupCharity_Optimized_V4.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V4.keras)
+[AlphabetSoupCharity_Optimization_V4.h5](Models_h5_and_keras_files/AlphabetSoupCharity_Optimization_V4.h5)
 
 The fourth optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
@@ -204,7 +204,7 @@ Model Summary:
 
 [AlphabetSoupCharity_Optimization_V5.ipynb](Notebooks/AlphabetSoupCharity_Optimization_V5.ipynb)
 
-[AlphabetSoupCharity_Optimized_V5.keras](Models_keras_files/AlphabetSoupCharity_Optimized_V5.keras)
+[AlphabetSoupCharity_Optimization_V5.h5](Models_h5_and_keras_files/AlphabetSoupCharity_Optimization_V5.h5)
 
 The fifth optimization run using the keras_tuner library had the following options:
 - 1-5 Hidden Layers
