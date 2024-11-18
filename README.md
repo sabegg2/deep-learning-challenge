@@ -74,7 +74,7 @@ In this module challenge, we were tasked with creating a tool for the nonprofit 
 
 [AlphabetSoupCharity_InitialModel.ipynb](Notebooks/AlphabetSoupCharity_InitialModel.ipynb)
 
-[AlphabetSoupCharity.keras](Models_keras_files/AlphabetSoupCharity.keras)
+[AlphabetSoupCharity.h5](Models_h5_and_keras_files/AlphabetSoupCharity.h5)
 
 The base base neural network model was built using the `tenserflow` library `keras` package  with the following parameters with low computation time in mind:
 
